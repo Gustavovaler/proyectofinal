@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchMovies } from "./../actions/index";
+import { fetchMovies, addFavList} from "./../actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Container,
@@ -45,7 +45,7 @@ function Home() {
   }, [counter]);
 
   const addToFav = (id) => {
-      console.log(id)
+      dispatch(addFavList(id))
       
   }
 

@@ -1,6 +1,6 @@
 
 
-export const LoadMoviesReducer = (state ={} , action) => {
+export const LoadMoviesReducer = (state = {favs:[], detail: {}, results:[]} , action) => {
 
     const {type} = action
     switch (type) {
@@ -14,6 +14,15 @@ export const LoadMoviesReducer = (state ={} , action) => {
             return {
                 ...state, 
                 detail:action.payload
+            }
+
+        case "ADD_TO_FAVORITES":
+            state.favs.push(action.payload)
+            let results = state.results
+            return {
+                ...state ,
+                favs: state.favs ,
+                results:results
             }
     
         default:
