@@ -9,6 +9,12 @@ export const LoadMoviesReducer = (state ={} , action) => {
             return {
                 ...state , results: action.payload.results
             }
+
+        case "SHOW_DETAIL":
+            return {
+                ...state, 
+                detail:action.payload
+            }
     
         default:
             return state
